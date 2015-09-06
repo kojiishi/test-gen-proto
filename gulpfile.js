@@ -8,6 +8,10 @@ var refDest = "ref";
 
 gulp.task("default", ["single", "test", "ref"]);
 
+gulp.task("watch", function () {
+    gulp.watch(ejsSrc, ["single", "test", "ref"]);
+});
+
 gulp.task("single", function () {
     var data = {
         fontDir: "../support/",
