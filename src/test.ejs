@@ -4,8 +4,8 @@
     src: url('<%=fontDir%>test.woff');
 }
 </style>
-<% defineTestAndRef(function () { %>
+<% if (isTest) { %>
     <div id="test">test</div>
-<% }, function () { %>
+<% } if (isReference) { %>
     <div id="ref">ref</div>
-<% }) %>
+<% } %>

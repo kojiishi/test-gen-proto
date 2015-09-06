@@ -15,10 +15,8 @@ gulp.task("watch", function () {
 gulp.task("single", function () {
     var data = {
         fontDir: "../support/",
-        defineTestAndRef: function (test, ref) {
-            test();
-            ref();
-        },
+        isReference: true,
+        isTest: true,
     };
     gulp.src(ejsSrc)
         .pipe(ejs(data))
@@ -28,9 +26,8 @@ gulp.task("single", function () {
 gulp.task("test", function () {
     var data = {
         fontDir: "support/",
-        defineTestAndRef: function (test, ref) {
-            test();
-        },
+        isReference: false,
+        isTest: true,
     };
     gulp.src(ejsSrc)
         .pipe(ejs(data))
@@ -40,9 +37,8 @@ gulp.task("test", function () {
 gulp.task("ref", function () {
     var data = {
         fontDir: "support/",
-        defineTestAndRef: function (test, ref) {
-            ref();
-        },
+        isReference: true,
+        isTest: false,
     };
     gulp.src(ejsSrc)
         .pipe(ejs(data))
