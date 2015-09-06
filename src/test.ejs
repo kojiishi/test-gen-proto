@@ -1,0 +1,11 @@
+<!DOCTYPE html>
+<style>
+@font-face {
+    src: url('<%=fontDir%>test.woff');
+}
+</style>
+<% defineTestAndRef(function () { %>
+    <div id="test">test</div>
+<% }, function () { %>
+    <div id="ref">ref</div>
+<% }) %>
